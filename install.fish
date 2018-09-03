@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/fish -i
 
 function ask
 	read -P "$argv[1] [Y/N] " ask_continue
@@ -52,7 +52,7 @@ if ask "Install your packages?"
 	path_check "packages.list"
 	exit_if_fail update
 
-	set install_list ""
+	set install_list
 	for x in (cat packages.list)
 		if     test -n $x
 		   and not has_installed $x
@@ -60,7 +60,7 @@ if ask "Install your packages?"
 		end
 	end
 
-	if test -n $install_list
+	if test -n "$install_list"
 		sudo pacman -S $install_list
 	else
 		echo "All packages were already installed!"
