@@ -106,6 +106,9 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-exec_always --no-startup-id "pkill polybar; polybar mybar"
+bar {
+}
+#exec_always --no-startup-id "pkill polybar; polybar mybar"
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "xfce4-power-manager"
+exec --no-startup-id "volumeicon"
