@@ -13,6 +13,8 @@ xsel
 i3-wm
 i3status
 rofi
+xorg-xinit
+xorg-server
 
 git
 
@@ -59,6 +61,8 @@ xf86-input-synaptics
 networkmanager
 
 sudo
+
+inkscape
 
 openssh
 sshfs
