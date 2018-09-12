@@ -12,7 +12,10 @@ xsel
 
 i3-wm
 i3status
+i3bar
+
 rofi
+
 xorg-xinit
 xorg-server
 
@@ -21,12 +24,14 @@ git
 python
 python2
 lua
+
 cabal-install
 ghc
 stack
-nasm
+
 clang
 gcc
+nasm
 
 cmake
 ninja
@@ -36,33 +41,35 @@ lldb
 
 boost
 
+inkscape
 firefox
+zathura
+libreoffice-fresh
+
 hunspell
 hunspell-nl
 hunspell-en_GB
-zathura
 
 dosfstools
 
 bdf-unifont
 ttf-fira-mono
-ttf-font-awesome
 
 bzip2
 unzip
 
 pulseaudio
 pulseaudio-alsa
+pavucontrol
 
 xfce4-power-manager
 network-manager-applet
+volumeicon
 
 xf86-input-synaptics
 networkmanager
 
 sudo
-
-inkscape
 
 openssh
 sshfs
