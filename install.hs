@@ -23,6 +23,10 @@ exec = callProcess
 sudoexec :: String -> [String] -> IO ()
 sudoexec program args = exec "sudo" $ program : args
 
+askexec :: String -> [String] -> IO ()
+askexec program args = confirmDo (Operation explanation (exec program args))
+  where explanation = "Program: " ++ program ++ "\nargs:\n\t" ++ (join $ intersperse "\n\t" args)
+
 installPackages :: IO ()
 installPackages = do
   let packageListFile = "packages.list"
@@ -37,7 +41,9 @@ linkConfigDirs :: IO ()
 linkConfigDirs = do
   destination <- (++ "/.config") <$> getHomeDirectory
   dirs <- (mapM makeAbsolute) =<< relativeDirContents "configs"
-  exec "ln" $ "-sf" : dirs ++ [destination]
+  destdirs <- (((destination ++ "/") ++) <$>) <$> listDirectory "configs"
+  askexec "rm" $ "-rf" : destdirs
+  askexec "ln" $ "-sf" : dirs ++ [destination]
 
 overwriteXinitrc :: IO ()
 overwriteXinitrc = do
