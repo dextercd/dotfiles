@@ -2,7 +2,7 @@
 set fish_greeting
 
 # variables
-set -U EDITOR nvim
+set -x EDITOR nvim
 
 # prompt
 function fish_prompt
