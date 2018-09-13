@@ -3,6 +3,7 @@ set fish_greeting
 
 # variables
 set -x EDITOR nvim
+set -x TERMINAL kitty
 
 # prompt
 function fish_prompt
