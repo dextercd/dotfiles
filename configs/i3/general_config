@@ -107,6 +107,7 @@ mode "resize" {
 }
 
 bar {
+	position top
 }
 #exec_always --no-startup-id "pkill polybar; polybar mybar"
 exec --no-startup-id "nm-applet"
