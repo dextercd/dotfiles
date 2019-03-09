@@ -111,6 +111,6 @@ bar {
 	tray_output primary
 }
 
-exec --no-startup-id --exec-always "nm-applet"
-exec --no-startup-id --exec-always "xfce4-power-manager"
-exec --no-startup-id --exec-always "volumeicon"
+exec "nm-applet"
+exec "xfce4-power-manager"
+exec "volumeicon"
