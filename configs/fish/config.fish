@@ -11,13 +11,8 @@ function fish_prompt
 end
 
 # aliases
-alias update="sudo pacman -Syu"
 alias e="$EDITOR"
 alias l="ls -l"
-
-function has_installed
-	pacman $argv -Q >/dev/null 2>/dev/null
-end
 
 function s
 	echo $status
