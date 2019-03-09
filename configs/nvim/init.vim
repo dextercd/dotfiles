@@ -1,5 +1,6 @@
 " Basic settings
 filetype indent off " Disable custom indentation files, I want one generic indentation method
+filetype plugin on
 
 " Indentation
 set tabstop=4

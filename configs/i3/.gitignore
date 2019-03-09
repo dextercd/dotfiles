@@ -1,1 +1,3 @@
-specific_config
+*
+!general_config
+!generate_config.sh
