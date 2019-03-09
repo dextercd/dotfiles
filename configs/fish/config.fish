@@ -4,6 +4,7 @@ set fish_greeting
 # variables
 set -x EDITOR nvim
 set -x TERMINAL kitty
+set -x PATH ~/bin $PATH
 
 # prompt
 function fish_prompt
