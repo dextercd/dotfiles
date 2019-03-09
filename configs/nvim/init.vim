@@ -13,8 +13,6 @@ set preserveindent " Makes it so spaces don't get collapsed into tabs when chang
 set nosmarttab     " Spaces should, just like tabs, be deleted one by one
 
 " Search/Replace
-set hlsearch
-set incsearch
 set inccommand=nosplit
 
 " Visual stuff
