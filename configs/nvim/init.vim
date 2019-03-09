@@ -43,3 +43,4 @@ function! StripTrailingWs() abort
 endfunction
 
 nnoremap <silent> <Space>w :call StripTrailingWs()<CR>
+command! -nargs=1 Mw call netrw#BrowseX("https://www.merriam-webster.com/dictionary/" . <q-args>, 0)
