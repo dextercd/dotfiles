@@ -37,6 +37,12 @@ specific_config()
 
 config_install_location="$HOME/.config"
 
+echo "# Install packages"
+if ask "Install packages"
+then
+	grep '.' packages.list | xargs sudo pacman -Syu --needed
+fi
+
 echo "# General configs"
 for file in configs/*
 do
