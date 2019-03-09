@@ -2,6 +2,8 @@
 filetype indent off " Disable custom indentation files, I want one generic indentation method
 filetype plugin on
 
+set hidden
+
 " Indentation
 set tabstop=4
 set shiftwidth=0
