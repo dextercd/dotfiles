@@ -33,3 +33,13 @@ nnoremap <silent> <esc> :nohlsearch <esc>
 nnoremap Y y$
 
 set fillchars+=vert:│
+
+function! StripTrailingWs() abort
+	let view = winsaveview()
+
+	%s/\s\+$//e
+
+	call winrestview(view)
+endfunction
+
+nnoremap <silent> <Space>w :call StripTrailingWs()<CR>
