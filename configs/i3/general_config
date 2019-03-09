@@ -1,12 +1,11 @@
 set $mod Mod4
 
-#font pango:monospace 12
 font pango:Fira Mono 8
 
-new_window 1pixel
+default_border pixel 3
 hide_edge_borders smart
 
-client.focused #AAAAAA #262626 #FFFFFF #72a8ff #AAAAAA
+client.focused #AAAAAA #262626 #FFFFFF #72a8ff #285577
 client.focused_inactive #262626 #262626 #AAAAAA #72a8ff #262626
 client.unfocused #262626 #262626 #AAAAAA #72a8ff #262626
 
