@@ -1,2 +1,2 @@
 #!/bin/sh
-cat general_config specific_config > config
+cat specific_config general_config > config

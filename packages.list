@@ -3,6 +3,7 @@ kitty
 vi
 ed
 neovim
+python-neovim
 xsel
 i3-wm
 i3status
@@ -27,6 +28,7 @@ hunspell-nl
 hunspell-en_GB
 bdf-unifont
 ttf-fira-mono
+adobe-source-code-pro-fonts
 bzip2
 unzip
 pulseaudio
