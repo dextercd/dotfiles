@@ -107,8 +107,26 @@ mode "resize" {
 }
 
 bar {
+	position top
+
+	status_command i3status
+
+	font pango:Fira Mono 10
+
+	colors {
+		background #111111
+		statusline #ffffff
+		separator #555555
+
+		#                  border  backgr  text
+		focused_workspace  #285577 #285577 #ffffff
+		active_workspace   #285577 #444444 #ffffff
+		inactive_workspace #222222 #222222 #888888
+		urgent_workspace   #222222 #222222 #888888
+		binding_mode       #222222 #222222 #888888
+	}
 }
-#exec_always --no-startup-id "pkill polybar; polybar mybar"
+
 exec --no-startup-id "nm-applet"
 exec --no-startup-id "xfce4-power-manager"
 exec --no-startup-id "volumeicon"
