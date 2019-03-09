@@ -1,0 +1,7 @@
+[user]
+	email = dexter.c.dopping@gmail.com
+	name = dextercd
+[core]
+	editor = nvim
+[alias]
+	co = checkout
