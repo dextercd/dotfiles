@@ -1,0 +1,14 @@
+general {
+	output_format = "i3bar"
+}
+
+order += "disk /"
+order += "time"
+
+time {
+	format = "%a %F %H:%M"
+}
+
+disk "/" {
+	format = "%avail/%total"
+}
