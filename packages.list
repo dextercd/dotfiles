@@ -36,3 +36,5 @@ pulseaudio-alsa
 pavucontrol
 sudo
 openssh
+tmux
+dmenu
