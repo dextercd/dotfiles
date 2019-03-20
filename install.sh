@@ -11,7 +11,7 @@ ask()
 
 		*)
 			echo "Unexpected response."
-			ask $1
+			ask "$1"
 			return
 	esac
 }
@@ -27,7 +27,7 @@ assert_file_exists()
 
 specific_config()
 {
-	assert_file_exists $1
+	assert_file_exists "$1"
 
 	if ask "Install config $1 to $2?"
 	then
