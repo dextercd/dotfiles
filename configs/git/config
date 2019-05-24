@@ -7,3 +7,8 @@
 	co = checkout
 [credential]
 	helper = cache
+[merge]
+	ff = no
+	commit = no
+[pull]
+	ff = yes
