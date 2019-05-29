@@ -21,6 +21,12 @@ set termguicolors
 colorscheme micol
 set number " enable line numbers
 
+" wrapping + indicator
+set textwidth=80
+" I don't use +1 because in some situation I might like to disable textwidth but
+" keep the colorcolumn
+set colorcolumn=81
+
 set list
 set listchars=tab:»\ ,space:·
 
