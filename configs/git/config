@@ -5,6 +5,7 @@
 	editor = nvim
 [alias]
 	co = checkout
+	graph = log --oneline --graph
 [credential]
 	helper = cache
 [merge]
