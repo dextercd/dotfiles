@@ -11,6 +11,7 @@ set autoindent
 set copyindent     " Makes it so spaces don't get collapsed into tabs on new lines
 set preserveindent " Makes it so spaces don't get collapsed into tabs when changing indent
 set nosmarttab     " Spaces should, just like tabs, be deleted one by one
+set nolisp
 
 " Search/Replace
 set inccommand=nosplit
