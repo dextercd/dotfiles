@@ -13,3 +13,5 @@
 	commit = no
 [pull]
 	ff = yes
+[push]
+	default = upstream
