@@ -34,6 +34,7 @@ unzip
 pulseaudio
 pulseaudio-alsa
 pavucontrol
+volumeicon
 sudo
 openssh
 tmux
