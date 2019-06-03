@@ -3,6 +3,7 @@ set $mod Mod4
 font pango:Fira Mono 8
 
 default_border pixel 3
+default_floating_border none
 hide_edge_borders smart
 
 client.focused #AAAAAA #262626 #FFFFFF #72a8ff #285577
@@ -11,6 +12,9 @@ client.unfocused #262626 #262626 #AAAAAA #72a8ff #262626
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+
+# sleep
+bindsym $mod+z exec systemctl suspend
 
 # start a terminal
 bindsym $mod+Return exec kitty
