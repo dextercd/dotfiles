@@ -25,6 +25,10 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -p program: -fn "Fira Mono"
 
+# custom workspace
+bindsym $mod+semicolon exec i3-msg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs i3-msg workspace
+bindsym $mod+Shift+semicolon exec i3-msg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs i3-msg move container to workspace
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
