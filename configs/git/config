@@ -6,7 +6,6 @@
 [alias]
 	co = checkout
 	graph = log --oneline --graph
-	pull = pull --ff-only
 	get-file = "!f(){ git show \"$1\" >$2;};f"
 	mpull = pull --ff
 	merge = merge --no-ff
@@ -17,6 +16,6 @@
 	ff = no
 	commit = no
 [pull]
-	ff = yes
+	ff = only
 [push]
 	default = upstream
