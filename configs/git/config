@@ -10,6 +10,7 @@
 	mpull = pull --ff
 	merge = merge --no-ff
 	ff = merge --ff-only
+	bash = !bash
 [credential]
 	helper = cache
 [merge]
