@@ -20,3 +20,8 @@
 	ff = only
 [push]
 	default = upstream
+
+[includeIf "gitdir/i:C:/Users/Dexter/"]
+	path = config-werk
+[includeIf "gitdir/i:H:/Users/Dexter/"]
+	path = config-werk
