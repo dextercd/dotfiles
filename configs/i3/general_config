@@ -19,6 +19,9 @@ bindsym $mod+z exec systemctl suspend
 # start a terminal
 bindsym $mod+Return exec kitty
 
+# screenshot region
+bindsym $mod+Shift+s exec xfce4-screenshooter --clipboard --region
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
