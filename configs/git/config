@@ -20,6 +20,8 @@
 	ff = only
 [push]
 	default = upstream
+[rerere]
+	enabled = true
 
 [includeIf "gitdir/i:C:/Users/Dexter/"]
 	path = config-werk
