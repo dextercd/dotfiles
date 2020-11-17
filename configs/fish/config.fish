@@ -4,7 +4,10 @@ set fish_greeting
 # variables
 set -x EDITOR nvim
 set -x TERMINAL kitty
-set -x PATH ~/bin $PATH
+set -x PATH $PATH ~/bin
+set -x PATH $PATH ~/.dotnet/tools
+set -x npm_config_prefix "$HOME/.node_modules"
+set -x PATH "$npm_config_prefix/bin:$PATH"
 
 # prompt
 function fish_prompt
@@ -24,3 +27,5 @@ end
 function journal
 	nvim -c 'set spelllang=nl' -c 'set spell' -c 'norm G' ~/journals/(date -I)
 end
+
+alias wluajit="/home/dexter/Downloads/LuaJIT-2.0.5/src/luajit.exe"

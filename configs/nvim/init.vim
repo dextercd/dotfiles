@@ -25,6 +25,7 @@ else
 	colorscheme micol
 endif
 set number " enable line numbers
+let g:sql_type_default = 'psql'
 
 " wrapping + indicator
 "set textwidth=80
