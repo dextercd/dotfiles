@@ -18,7 +18,11 @@ set inccommand=nosplit
 
 " Visual stuff
 set termguicolors
-colorscheme micol
+if $SCREEN=='ereader'
+	colorscheme ereader
+else
+	colorscheme micol
+endif
 set number " enable line numbers
 
 " wrapping + indicator
