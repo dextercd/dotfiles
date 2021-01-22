@@ -19,6 +19,11 @@
   (evil-mode 1)
   (evil-global-set-key 'normal (kbd "<backspace>") 'evil-scroll-up))
 
+(use-package evil-collection
+  :ensure t
+  :config
+  (evil-collection-init))
+
 (use-package helm
   :ensure t
   :config
@@ -54,7 +59,7 @@
 (set-default 'indent-tabs-mode nil)
 
 ;;; Erlang mode
-(setq load-path (cons "/usr/lib/erlang/lib/tools-3.4.1/emacs" load-path))
+(setq load-path (cons "/usr/lib/erlang/lib/tools-3.4.2/emacs" load-path))
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/local/otp/bin" exec-path))
 (require 'erlang-start)
@@ -69,6 +74,7 @@
    [default default default italic underline success warning error])
  '(custom-enabled-themes '(wombat))
  '(evil-undo-system 'undo-redo)
+ '(helm-minibuffer-history-key "M-p")
  '(package-selected-packages '(docker-tramp helm use-package evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
