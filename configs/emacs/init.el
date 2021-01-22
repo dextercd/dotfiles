@@ -15,6 +15,8 @@
 
 (use-package evil
   :ensure t
+  :preface
+  (setq evil-want-keybinding nil)
   :config
   (evil-mode 1)
   (evil-global-set-key 'normal (kbd "<backspace>") 'evil-scroll-up))
@@ -23,6 +25,14 @@
   :ensure t
   :config
   (evil-collection-init))
+
+(use-package evil-org
+  :ensure t
+  :after org
+  :hook (org-mode . (lambda () evil-org-mode))
+  :config
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
 
 (use-package helm
   :ensure t
@@ -57,6 +67,9 @@
 
 ;; General indentation
 (set-default 'indent-tabs-mode nil)
+
+;; Put backups into seperate directory
+(setq backup-directory-alist '(("" . "~/.config/emacs/backup")))
 
 ;;; Erlang mode
 (setq load-path (cons "/usr/lib/erlang/lib/tools-3.4.2/emacs" load-path))
