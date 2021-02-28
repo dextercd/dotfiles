@@ -13,34 +13,53 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package undo-fu)
+
 (use-package evil
-  :ensure t
-  :preface
-  (setq evil-want-keybinding nil)
+  :init
+  (setq evil-want-keybinding nil) ; needed by evil-collection
+  (setq evil-undo-system 'undo-fu)
+  (setq evil-move-beyond-eol t) ; Make C-o work better when at eol
   :config
   (evil-mode 1)
   (evil-global-set-key 'normal (kbd "<backspace>") 'evil-scroll-up))
 
-(use-package evil-collection
-  :ensure t
-  :config
-  (evil-collection-init))
-
 (use-package evil-org
-  :ensure t
-  :after org
-  :hook (org-mode . (lambda () evil-org-mode))
+  :after (org evil)
+  :hook (org-mode . evil-org-mode)
   :config
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
+(use-package evil-collection
+  :config
+  (evil-collection-init))
+
+(use-package magit)
+
 (use-package helm
-  :ensure t
   :config
   (helm-mode 1))
 
-(use-package docker-tramp
-  :ensure t)
+(use-package docker-tramp)
+
+(use-package pyvenv
+  :config
+  (pyvenv-mode t))
+
+(use-package company
+  :config
+  (company-mode t)
+  (global-set-key (kbd "C-SPC") 'company-complete))
+
+(use-package lsp-mode
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  ;:hook
+  ;(python-mode . lsp)
+  :commands lsp)
+
+(setq inhibit-splash-screen t)
 
 ;;; Org config
 (setq org-agenda-files '("~/org-agenda"))
@@ -72,10 +91,12 @@
 (setq backup-directory-alist '(("" . "~/.config/emacs/backup")))
 
 ;;; Erlang mode
-(setq load-path (cons "/usr/lib/erlang/lib/tools-3.4.2/emacs" load-path))
+(setq load-path (cons "/usr/lib/erlang/lib/tools-3.4.3/emacs" load-path))
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/local/otp/bin" exec-path))
 (require 'erlang-start)
+
+(use-package typescript-mode)
 
 ;;; custom-set-variables
 (custom-set-variables
@@ -86,9 +107,10 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes '(wombat))
- '(evil-undo-system 'undo-redo)
  '(helm-minibuffer-history-key "M-p")
- '(package-selected-packages '(docker-tramp helm use-package evil)))
+ '(package-selected-packages
+   '(typescript-mode company pyvenv lsp-mode undo-fu magit docker-tramp helm use-package evil))
+ '(typescript-indent-level 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
