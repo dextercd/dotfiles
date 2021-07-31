@@ -36,6 +36,11 @@ set colorcolumn=81
 set list
 set listchars=tab:»\ ,space:·
 
+" Restore cursor location when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 " Mouse
 set mouse=a
 
@@ -57,3 +62,7 @@ endfunction
 
 nnoremap <silent> <Space>w :call StripTrailingWs()<CR>
 command! -nargs=1 Mw call netrw#BrowseX("https://www.merriam-webster.com/dictionary/" . <q-args>, 0)
+
+" Git specific configuration
+au FileType gitcommit setlocal textwidth=72
+au FileType gitcommit setlocal colorcolumn=+1
