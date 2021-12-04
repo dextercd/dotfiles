@@ -27,3 +27,12 @@
 	path = config-werk
 [includeIf "gitdir/i:H:/Users/Dexter/"]
 	path = config-werk
+[grep]
+	lineNumber = true
+[diff]
+	tool = bcompare
+[difftool]
+	prompt = false
+	bcompare = trustExitCode
+[init]
+	defaultBranch = main

@@ -14,7 +14,7 @@ client.unfocused #262626 #262626 #AAAAAA #72a8ff #262626
 floating_modifier $mod
 
 # sleep
-bindsym $mod+z exec systemctl suspend
+#bindsym $mod+z exec systemctl suspend
 
 # start a terminal
 bindsym $mod+Return exec kitty

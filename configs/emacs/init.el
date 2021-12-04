@@ -91,7 +91,7 @@
 (setq backup-directory-alist '(("" . "~/.config/emacs/backup")))
 
 ;;; Erlang mode
-(setq load-path (cons "/usr/lib/erlang/lib/tools-3.4.3/emacs" load-path))
+(setq load-path (cons "/usr/lib/erlang/lib/tools-3.5/emacs" load-path))
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/local/otp/bin" exec-path))
 (require 'erlang-start)
