@@ -1,6 +1,6 @@
 " Basic settings
 filetype indent off " Disable custom indentation files, I want one generic indentation method
-filetype plugin off
+filetype plugin on
 
 set hidden
 

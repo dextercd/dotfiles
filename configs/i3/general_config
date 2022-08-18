@@ -138,6 +138,6 @@ bar {
 	}
 }
 
-exec "nm-applet"
-exec "xfce4-power-manager"
+#exec "nm-applet"
+#exec "xfce4-power-manager"
 exec "volumeicon"

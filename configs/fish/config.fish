@@ -27,13 +27,3 @@ end
 function journal
 	nvim -c 'set spelllang=nl' -c 'set spell' -c 'norm G' ~/journals/(date -I)
 end
-
-alias wluajit="/home/dexter/Downloads/LuaJIT-2.0.5/src/luajit.exe"
-
-set -x PATH /home/dexter/perl5/bin $PATH 2>/dev/null;
-set -q PERL5LIB; and set -x PERL5LIB /home/dexter/perl5/lib/perl5:$PERL5LIB;
-set -q PERL5LIB; or set -x PERL5LIB /home/dexter/perl5/lib/perl5;
-set -q PERL_LOCAL_LIB_ROOT; and set -x PERL_LOCAL_LIB_ROOT /home/dexter/perl5:$PERL_LOCAL_LIB_ROOT;
-set -q PERL_LOCAL_LIB_ROOT; or set -x PERL_LOCAL_LIB_ROOT /home/dexter/perl5;
-set -x PERL_MB_OPT --install_base\ \"/home/dexter/perl5\";
-set -x PERL_MM_OPT INSTALL_BASE=/home/dexter/perl5;
