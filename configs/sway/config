@@ -80,8 +80,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run -p program: -fn "Fira Mono"
 
 # custom workspace
-bindsym $mod+semicolon exec i3-msg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs i3-msg workspace
-bindsym $mod+Shift+semicolon exec i3-msg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs i3-msg move container to workspace
+bindsym $mod+semicolon exec swaymsg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs swaymsg workspace
+bindsym $mod+Shift+semicolon exec swaymsg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs swaymsg move container to workspace
 
 # change focus
 bindsym $mod+h focus left
@@ -146,7 +146,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Shift+e exec swaymsg exit
 
 
 bindsym $mod+r mode "resize"
