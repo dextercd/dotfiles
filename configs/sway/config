@@ -10,6 +10,10 @@ workspace 3 output $primary-display
 workspace 4 output $primary-display
 workspace 5 output $primary-display
 
+workspace "Thunderbird" output $primary-display
+workspace "Pavu" output $primary-display
+
+
 workspace 6 output $secondary-display
 workspace 7 output $secondary-display
 workspace 8 output $secondary-display
@@ -18,27 +22,18 @@ workspace 10 output $secondary-display
 
 
 workspace "Discord" output $secondary-display
+workspace "Keepass" output $secondary-display
+
+
 assign [class="^discord$"] "Discord"
 exec discord
 
-
-workspace "Cosmic Poll" output $secondary-display
-assign [class="^kitty$" instance="^Cosmic Poll$"] "Cosmic Poll"
-exec kitty --name='Cosmic Poll' --hold /home/dexter/cosmic_rays/build/src/cosmic_poll/cosmic_poll --alloc-size 256MiB
-
-
-workspace "Thunderbird" output $primary-display
 assign [class="^Thunderbird$"] Thunderbird
 exec thunderbird
 
-
-workspace "Pavu" output $primary-display
 assign [app_id="^pavucontrol$"] Pavu
 exec pavucontrol
 
-#assign [class="^Noita Map$"] nm
-
-Workspace "Keepass" output $secondary-display
 assign [class="^KeePassXC$"] Keepass
 assign [app_id="^org.keepassxc.KeePassXC$"] Keepass
 exec keepassxc
