@@ -1,3 +1,5 @@
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 set $primary-display "HDMI-A-1"
 set $secondary-display "HDMI-A-2"
 
@@ -68,7 +70,7 @@ bindsym $mod+p exec /home/dexter/bin/sway-prop
 bindsym $mod+Return exec kitty
 
 # screenshot region
-bindsym $mod+Shift+s exec xfce4-screenshooter --clipboard --region
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
 
 # kill focused window
 bindsym $mod+Shift+q kill
