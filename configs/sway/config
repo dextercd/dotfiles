@@ -29,6 +29,7 @@ assign [class="^discord$"] "Discord"
 exec discord
 
 assign [class="^Thunderbird$"] Thunderbird
+assign [app_id="^thunderbird$"] Thunderbird
 exec thunderbird
 
 assign [app_id="^pavucontrol$"] Pavu
