@@ -43,6 +43,10 @@ assign [class="^KeePassXC$"] Keepass
 assign [app_id="^org.keepassxc.KeePassXC$"] Keepass
 exec keepassxc
 
+
+workspace Steam output $primary-display
+assign [class="^Steam$"] Steam
+
 font pango:Fira Mono 8
 
 default_border pixel 3
