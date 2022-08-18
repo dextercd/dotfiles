@@ -196,3 +196,7 @@ bar {
         binding_mode       #222222 #222222 #888888
     }
 }
+
+input "1133:45088:MX_Vertical_Mouse" {
+    pointer_accel -0.3
+}
