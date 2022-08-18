@@ -70,12 +70,12 @@ bindsym $mod+Shift+s exec xfce4-screenshooter --clipboard --region
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -p program: -fn "Fira Mono"
+# start bemenu (a program launcher)
+bindsym $mod+d exec bemenu-run -p program: --fn "Fira Mono 14"
 
 # custom workspace
-bindsym $mod+semicolon exec swaymsg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs swaymsg workspace
-bindsym $mod+Shift+semicolon exec swaymsg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs swaymsg move container to workspace
+bindsym $mod+semicolon exec swaymsg -t get_workspaces | jq '.[] | .name' -r | bemenu -p ws: --fn "Fira Mono 14" | xargs swaymsg workspace
+bindsym $mod+Shift+semicolon exec swaymsg -t get_workspaces | jq '.[] | .name' -r | bemenu -p ws: --fn "Fira Mono 14" | xargs swaymsg move container to workspace
 
 # change focus
 bindsym $mod+h focus left
