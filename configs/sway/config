@@ -196,7 +196,3 @@ bar {
 		binding_mode       #222222 #222222 #888888
 	}
 }
-
-#exec "nm-applet"
-#exec "xfce4-power-manager"
-exec "volumeicon"
