@@ -36,7 +36,7 @@ exec thunderbird
 
 
 workspace "Pavu" output $primary-display
-assign [class="^Pavucontrol$"] Pavu
+assign [app_id="^pavucontrol$"] Pavu
 exec pavucontrol
 
 #assign [class="^Noita Map$"] nm
@@ -145,6 +145,17 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec swaymsg exit
 
+# Media
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -166,7 +177,7 @@ mode "resize" {
 
 bar {
 	position top
-	tray_output primary
+	tray_output $primary-display
 
 	status_command i3status
 
