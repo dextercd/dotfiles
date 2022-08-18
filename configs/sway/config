@@ -1,0 +1,183 @@
+bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
+exec xrandr --output DVI-D-0 --primary --left-of DVI-I-0
+
+workspace 1 output DVI-D-0
+workspace 2 output DVI-D-0
+workspace 3 output DVI-D-0
+workspace 4 output DVI-D-0
+workspace 5 output DVI-D-0
+
+workspace 6 output DVI-I-0
+workspace 7 output DVI-I-0
+workspace 8 output DVI-I-0
+workspace 9 output DVI-I-0
+workspace 10 output DVI-I-0
+
+
+workspace "Discord" output DVI-I-0
+assign [class="^discord$"] "Discord"
+exec discord
+
+
+workspace "Cosmic Poll" output DVI-I-0
+assign [class="^kitty$" instance="^Cosmic Poll$"] "Cosmic Poll"
+exec kitty --name='Cosmic Poll' --hold /home/dexter/cosmic_rays/build/src/cosmic_poll/cosmic_poll --alloc-size 256MiB
+
+
+workspace "Thunderbird" output DVI-D-0
+assign [class="^Thunderbird$"] Thunderbird
+exec thunderbird
+
+
+workspace "Pavu" output DVI-D-0
+assign [class="^Pavucontrol$"] Pavu
+exec pavucontrol
+
+#assign [class="^Noita Map$"] nm
+
+Workspace "Keepass" output DVI-I-0
+assign [class="^KeePassXC$"] Keepass
+exec keepassxc
+set $mod Mod4
+
+font pango:Fira Mono 8
+
+default_border pixel 3
+default_floating_border none
+hide_edge_borders smart
+
+client.focused #AAAAAA #262626 #FFFFFF #72a8ff #285577
+client.focused_inactive #262626 #262626 #AAAAAA #72a8ff #262626
+client.unfocused #262626 #262626 #AAAAAA #72a8ff #262626
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# sleep
+#bindsym $mod+z exec systemctl suspend
+
+# start a terminal
+bindsym $mod+Return exec kitty
+
+# screenshot region
+bindsym $mod+Shift+s exec xfce4-screenshooter --clipboard --region
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run -p program: -fn "Fira Mono"
+
+# custom workspace
+bindsym $mod+semicolon exec i3-msg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs i3-msg workspace
+bindsym $mod+Shift+semicolon exec i3-msg -t get_workspaces | jq '.[] | .name' -r | dmenu -p ws: -fn "Fira Mono" | xargs i3-msg move container to workspace
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# horizontal split
+bindsym $mod+t split h
+# vertical split
+bindsym $mod+v split v
+
+# toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec i3-msg exit
+
+
+bindsym $mod+r mode "resize"
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bar {
+	position top
+	tray_output primary
+
+	status_command i3status
+
+	font pango:Fira Mono 10
+
+	colors {
+		background #111111
+		statusline #ffffff
+		separator #555555
+
+		#                  border  backgr  text
+		focused_workspace  #285577 #285577 #ffffff
+		active_workspace   #285577 #444444 #ffffff
+		inactive_workspace #222222 #222222 #888888
+		urgent_workspace   #222222 #222222 #888888
+		binding_mode       #222222 #222222 #888888
+	}
+}
+
+#exec "nm-applet"
+#exec "xfce4-power-manager"
+exec "volumeicon"
