@@ -1,41 +1,46 @@
-bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle
-exec xrandr --output DVI-D-0 --primary --left-of DVI-I-0
+set $primary-display "HDMI-A-2"
+set $secondary-display "HDMI-A-1"
 
-workspace 1 output DVI-D-0
-workspace 2 output DVI-D-0
-workspace 3 output DVI-D-0
-workspace 4 output DVI-D-0
-workspace 5 output DVI-D-0
+output $primary-monitor
 
-workspace 6 output DVI-I-0
-workspace 7 output DVI-I-0
-workspace 8 output DVI-I-0
-workspace 9 output DVI-I-0
-workspace 10 output DVI-I-0
+workspace 1 output $primary-display
+workspace 2 output $primary-display
+workspace 3 output $primary-display
+workspace 4 output $primary-display
+workspace 5 output $primary-display
+
+workspace 6 output $secondary-display
+workspace 7 output $secondary-display
+workspace 8 output $secondary-display
+workspace 9 output $secondary-display
+workspace 10 output $secondary-display
 
 
-workspace "Discord" output DVI-I-0
+exec firefox -P default
+
+
+workspace "Discord" output $secondary-display
 assign [class="^discord$"] "Discord"
 exec discord
 
 
-workspace "Cosmic Poll" output DVI-I-0
+workspace "Cosmic Poll" output $secondary-display
 assign [class="^kitty$" instance="^Cosmic Poll$"] "Cosmic Poll"
 exec kitty --name='Cosmic Poll' --hold /home/dexter/cosmic_rays/build/src/cosmic_poll/cosmic_poll --alloc-size 256MiB
 
 
-workspace "Thunderbird" output DVI-D-0
+workspace "Thunderbird" output $primary-display
 assign [class="^Thunderbird$"] Thunderbird
 exec thunderbird
 
 
-workspace "Pavu" output DVI-D-0
+workspace "Pavu" output $primary-display
 assign [class="^Pavucontrol$"] Pavu
 exec pavucontrol
 
 #assign [class="^Noita Map$"] nm
 
-Workspace "Keepass" output DVI-I-0
+Workspace "Keepass" output $secondary-display
 assign [class="^KeePassXC$"] Keepass
 exec keepassxc
 set $mod Mod4
@@ -55,6 +60,8 @@ floating_modifier $mod
 
 # sleep
 #bindsym $mod+z exec systemctl suspend
+
+bindsym $mod+p exec /home/dexter/bin/sway-prop
 
 # start a terminal
 bindsym $mod+Return exec kitty
