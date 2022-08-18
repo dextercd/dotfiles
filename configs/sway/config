@@ -17,9 +17,6 @@ workspace 9 output $secondary-display
 workspace 10 output $secondary-display
 
 
-exec firefox -P default
-
-
 workspace "Discord" output $secondary-display
 assign [class="^discord$"] "Discord"
 exec discord
