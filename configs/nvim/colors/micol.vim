@@ -76,7 +76,8 @@ hi Constant ctermfg=70 ctermbg=NONE guifg=#60aa00 guibg=NONE guisp=NONE cterm=NO
 hi! link Define PreProc
 hi! link Debug Special
 hi! link Delimiter Special
-hi Error ctermfg=203 ctermbg=234 guifg=#ff2040 guibg=#1c1c1c guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,standout
+"hi Error ctermfg=203 ctermbg=234 guifg=#ff2040 guibg=#1c1c1c guisp=NONE cterm=NONE,bold,reverse gui=NONE,bold,standout
+hi Error ctermfg=253 ctermbg=234 guifg=#dddddd guibg=#1c1c1c guisp=NONE cterm=NONE gui=NONE
 hi! link Exception Statement
 hi! link Float Constant
 hi! link Function Identifier

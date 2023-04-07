@@ -35,7 +35,7 @@ assign [app_id="^thunderbird$"] Thunderbird
 exec thunderbird
 
 assign [app_id="^pavucontrol$"] Pavu
-exec pavucontrol
+# exec pavucontrol
 
 assign [class="^KeePassXC$"] Keepass
 assign [app_id="^org.keepassxc.KeePassXC$"] Keepass
@@ -71,6 +71,7 @@ bindsym $mod+Return exec kitty
 
 # screenshot region
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
+bindsym $mod+Shift+t exec GRIM_DEFAULT_DIR=/home/dexter/Documents/Screenshots grim -g "$(slurp)"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -148,8 +149,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec swaymsg exit
 
 # Media
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
@@ -157,6 +158,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+bindsym --whole-window button8 exec ~/bin/toggle-mic
 
 
 bindsym $mod+r mode "resize"
@@ -202,3 +205,11 @@ bar {
 input "1133:45088:MX_Vertical_Mouse" {
     pointer_accel -0.3
 }
+
+
+# Window customisations
+
+for_window [title="^String Search \[CodeBrowser"] floating enable
+
+
+#assign [title="^Noita - Build Apr 23 2021 - 18:44:24$"] workspace Noita

@@ -4,6 +4,8 @@ general {
 
 order += "disk /"
 order += "time"
+order += "volume master"
+order += "read_file mic"
 
 time {
 	format = "%a %F %H:%M"
@@ -11,4 +13,15 @@ time {
 
 disk "/" {
 	format = "%avail/%total"
+}
+
+volume master {
+    device = "pulse:bluez_output.38_18_4C_93_CE_64.1"
+    format = "♪%volume"
+    format_muted = "♪%volume"
+    color_degraded = "#666666"
+}
+
+read_file mic {
+    path = "/tmp/dexter-mic"
 }
